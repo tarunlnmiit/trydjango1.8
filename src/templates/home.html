@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %}Tarun Gupta{% endblock %}
+  
+{% block jumbotron %}
+
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
+<div class='row'>
+	<div class='col-sm-9'>
+      <div class="jumbotron text-align-center">
+        <h2><b>TARUN GUPTA </h2>
+          <a class="btn btn-lg" href="" role="button"><p>Software Developer/Programmer</p></a>
+        </b>
+        <p class='lead'>Effective and positive team player known for contributing effective solutions. 
+        Able to give and embrace constructive criticism while working in a team environment towards a common goal.
+        Effective listener/communicator and fast diligent learner hungry for knowledge.
+		Productive worker under pressure and highly motivated.
+		</p>
+      </div>
+    </div>
+    <div class="col-sm-3 tileBox pull-right"> <a href=""><img src="{% static 'img/img2.jpg' %}" alt="tarun_gupta" height="275" border="5"/></a> </div>
+</div>
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="row">
+ 	<div class="col-md-3 col-sm-6 col-xs-6 col-xs-offset-1">
+		<h1>{{ title }}</h1>
+
+		<form method='POST' action=''>{% csrf_token %}
+			<!--This was earlier {{ form.as_p }} -->
+			{{ form|crispy }}
+
+			<input class = 'btn btn-primary' type='submit' value='Sign Up'/>
+
+		</form>
+	</div>
+</div>
+{% endblock %}
